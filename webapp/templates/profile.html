@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+    .pro_pic{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+            <div class="card shadow" style="width: 100;">
+                <div class="d-flex justify-content-center my-2">
+                    <img  src="{{auth0_user.extra_data.picture}}" class="pro_pic card-img-top" alt="image">
+                </div>
+                <div class="card-body">
+                    {% if request.user %}
+                    <h4 class="text-center" >{{request.user.first_name}}{{request.user.last_name}}</h4>
+                    {% endif %}
+                    {% if request.user.email %}
+                    <h6 class="text-center" >{{request.user.email}}</h6>
+                    {% endif %}
+                  <p class="card-text">{{user_data}}</p>
+                  <h1></h1>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
