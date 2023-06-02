@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'social_django'
 ]
 
+PROXY_SERVER = {
+    'SERVICE_A': 'http://localhost:8001',
+    'SERVICE_B': 'http://localhost:8002',
+}
 
 SOCIAL_AUTH_TRAILING_SLASH=False
 SOCIAL_AUTH_AUTH0_DOMAIN=config('APP_DOMAIN')
